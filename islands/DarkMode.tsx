@@ -2,14 +2,18 @@ import { useState } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 import IconSun from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/sun.tsx";
 import IconSunglasses from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/sunglasses.tsx";
-
 import IconMoon from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/moon.tsx";
+import { IS_BROWSER } from "$fresh/runtime.ts";
+
 interface CounterProps {
   start: number;
 }
 
 export default function DarkMode(props: CounterProps) {
   function getMode(): "light" | "dark" | "auto" {
+    if (!IS_BROWSER) {
+      return "auto";
+    }
     if (localStorage.theme === "dark") {
       return "dark";
     }
