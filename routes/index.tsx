@@ -1,5 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
-import Counter from "../islands/Counter.tsx";
+import DarkMode from "../islands/DarkMode.tsx";
 
 export default function Home() {
   return (
@@ -14,10 +14,9 @@ export default function Home() {
           alt="the fresh logo: a sliced lemon dripping with juice"
         />
         <p class="my-6">
-          Welcome to `fresh`. Try updating this message in the
-          ./routes/index.tsx file, and refresh.
+          This to `fresh` page show how to use Dark mode.
         </p>
-        <Counter start={3} />
+        <DarkMode start={3} />
       </div>
     </>
   );
