@@ -93,6 +93,7 @@
     "https://deno.land/x/importmap@0.2.1/_util.ts": "ada9a9618b537e6c0316c048a898352396c882b9f2de38aba18fd3f2950ede89",
     "https://deno.land/x/importmap@0.2.1/mod.ts": "ae3d1cd7eabd18c01a4960d57db471126b020f23b37ef14e1359bbb949227ade",
     "https://deno.land/x/rutt@0.0.13/mod.ts": "af981cfb95131152bf50fc9140fc00cb3efb6563df2eded1d408361d8577df20",
+    "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx": "9d0d78307f0a82f35c472b0d7067ed455dbeab3e247ef6e844397a5596d94f44",
     "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/moon.tsx": "66909dba4b961987bbef7b48a6745c5c08f313d9627a059e189f47a9fe24c915",
     "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/sun.tsx": "7386f702fd473a69202e6ebbc46efadfb3e5fe15590c7606656c9c818e1e16b8",
     "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/sunglasses.tsx": "ec3945ecbbdddb5062b2852b4f1f6ddb389e05511ddec19abe5eda688442587a",

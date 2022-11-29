@@ -51,7 +51,6 @@ export default function DarkMode(props: CounterProps) {
           updateMode();
           setMode("auto");
         }}
-        class="flex-grow-1 font-bold text-xl"
       >
         <IconSunglasses />
         Auto
