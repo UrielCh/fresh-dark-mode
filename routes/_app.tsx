@@ -8,9 +8,12 @@ export default function App({ Component }: AppProps) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            window.isDark = localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-            document.documentElement.classList[window.isDark ? 'add' : 'remove']("dark");
-            `,
+function global_dark(change) {
+  if (change === 'auto') delete localStorage.theme; else if (change === 'on') localStorage.theme = 'dark'; else if (change === 'off') localStorage.theme = 'light';
+  window.isDark = localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  document.documentElement.classList[window.isDark ? 'add' : 'remove']("dark");
+}
+global_dark();`,
           }}
         />
       </Head>

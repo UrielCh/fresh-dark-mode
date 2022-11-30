@@ -1,25 +1,25 @@
 import { useState } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-// import {
-//   MdBrightnessAuto,
+//import { // TODO fix extra stoque: {tag,attr:{fill,d:"M0 0h24v24H0z"}} in all Md icons
+//  MdBrightnessAuto,
 //   MdDarkMode,
 //   MdOutlineWbSunny,
-// } from "https://deno.land/x/react_icons@0.1.3/md/mod.ts";
+//} from "https://deno.land/x/react_icons@0.1.3/md/mod.ts";
 import { BsMoon, BsSun } from "https://deno.land/x/react_icons@0.1.3/bs/mod.ts";
 import { GrSystem } from "https://deno.land/x/react_icons@0.1.3/gr/mod.ts";
 
-interface CounterProps {
-  start: number;
+interface DarkModeProps {
+  prev: "light" | "dark" | "system";
 }
 
-export default function DarkMode(props: CounterProps) {
+export default function DarkMode(props: DarkModeProps) {
   /**
    * Used to format mode as text in screen
    */
   function getMode(): "light" | "dark" | "system" {
     if (!IS_BROWSER) {
-      return "system";
+      return props.prev;
     }
     if (localStorage.theme === "dark") {
       return "dark";

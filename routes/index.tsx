@@ -1,5 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import DarkMode from "../islands/DarkMode.tsx";
+import DarkModeC from "../components/DarkModeC.tsx";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
 
 export default function Home() {
@@ -15,17 +16,21 @@ export default function Home() {
           alt="the fresh logo: a sliced lemon dripping with juice"
         />
         <p class="my-6">
-          This to `fresh` page show how to use Dark mode.
-        </p>
-        <p class="my-6">
           <a
             href="https://github.com/UrielCh/fresh-dark-mode"
-            class="inline-flex items-center gap-1 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            class="inline-flex items-center gap-1 hover:text-gray-900 dark:hover:text-gray-100 transition-colors border-gray-200 dark:border-gray-800"
           >
             <IconBrandGithub /> Source
           </a>
         </p>
-        <DarkMode start={3} />
+        <p class="my-6">
+          Deno islands type dark mode switcher (SSR + CSR more interactif)
+        </p>
+        <DarkMode prev={"system"} />
+        <p class="my-6">
+          Deno components type dark mode switcher, client side only simply works
+        </p>
+        <DarkModeC />
       </div>
     </>
   );
