@@ -10,6 +10,9 @@ interface CounterProps {
 }
 
 export default function DarkMode(props: CounterProps) {
+  /**
+   * Used to format mode as text in screen
+   */
   function getMode(): "light" | "dark" | "auto" {
     if (!IS_BROWSER) {
       return "auto";
@@ -24,14 +27,11 @@ export default function DarkMode(props: CounterProps) {
   }
 
   function updateMode() {
-    (window as unknown as { isDark: boolean }).isDark =
-      localStorage.theme === "dark" ||
+    const w = (window as unknown as { isDark: boolean });
+    w.isDark = localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList
-      [(window as unknown as { isDark: boolean }).isDark ? "add" : "remove"](
-        "dark",
-      );
+    document.documentElement.classList[w.isDark ? "add" : "remove"]("dark");
   }
 
   const [mode, setMode] = useState(getMode());
