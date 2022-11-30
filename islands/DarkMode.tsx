@@ -1,13 +1,11 @@
 import { useState } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-//import { // TODO fix extra stoque: {tag,attr:{fill,d:"M0 0h24v24H0z"}} in all Md icons
-//  MdBrightnessAuto,
-//   MdDarkMode,
-//   MdOutlineWbSunny,
-//} from "https://deno.land/x/react_icons@0.1.3/md/mod.ts";
-import { BsMoon, BsSun } from "https://deno.land/x/react_icons@0.1.3/bs/mod.ts";
-import { GrSystem } from "https://deno.land/x/react_icons@0.1.3/gr/mod.ts";
+import {
+  GrActions,
+  GrMoon,
+  GrSystem,
+} from "https://deno.land/x/react_icons@0.2.3/gr/mod.ts";
 
 interface DarkModeProps {
   prev: "light" | "dark" | "system";
@@ -61,7 +59,7 @@ export default function DarkMode(props: DarkModeProps) {
   return (
     <div class="flex gap-2 w-full">
       <Button onClick={setDarkModeOn}>
-        <BsMoon />
+        <GrMoon />
         Force Dark
       </Button>
 
@@ -71,7 +69,7 @@ export default function DarkMode(props: DarkModeProps) {
       </Button>
 
       <Button onClick={setDarkModeOff}>
-        <BsSun />
+        <GrActions />
         Force light
       </Button>
       <div>
